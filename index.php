@@ -2,7 +2,12 @@
 include 'includes/head.php';
 ?>
 
-Hello Hello
+<?php 
+include 'includes/one.php';
+?>
+<?php 
+include 'includes/two.php';
+?>
 
 <?php
 include 'includes/foot.php';

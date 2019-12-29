@@ -1,15 +1,15 @@
 <article class="card text-center">
 <!---------------------Begin Tabs-------------------->
-  <h3 class="text-left inverse" >Huck dialog</h3>
+  <h2 class="text-left inverse" >Initialize Arrays</h2>
 <ul class="nav nav-tabs" id="tab1" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true">Goal</a>
+  <li class="nav-item"><h3>
+    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true">Goal</a></h3>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false">Arrays</a>
+  <li class="nav-item"><h3>
+    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false">Arrays</a></h3>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false">Further reading</a>
+  <li class="nav-item"><h3>
+    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false">Further reading</a></h3>
   </li>
 </ul>
 <!---------------------Begin Content-------------------->
@@ -37,7 +37,7 @@ echo "One role: <br/>";
 echo $players["Sam White"][0] . "\n";
 ?>
 </div>
-<div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">null</div>
+<div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">MadisonShakespeare <a href="https://twitter.com/madshakes"> Twitter</a></div>
 
 </div>
 </article>
