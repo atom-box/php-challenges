@@ -31,11 +31,27 @@ $players = array (
 "Marie Freese"  => array("Rosenkrantz"),
 "Leigha Vilen"  =>  array("Guildenstern"),
 "Evan Genest"  =>  array("Attendent", "Mourner", "Priest"));
-echo "One word:<br/>";
-echo $words[4] . "\n";
-echo "One role: <br/>";
-echo $players["Sam White"][0] . "\n";
+
+$a_time_for_everything = "A season for every activity under heaven:
+a time to be born and a time to die,
+a time to plant and a time to uproot,
+a time to kill and a time to heal,
+a time to tear down and a time to build,
+a time to weep and a time to laugh,
+a time to mourn and a time to dance,
+a time to scatter stones and a time to gather them,
+a time to embrace and a time to refrain,
+a time to search and a time to give up,
+a time to keep and a time to throw away,
+a time to tear and a time to mend,
+a time to be silent and a time to speak,
+a time to love and a time to hate,
+a time for war and a time for peace.";
+
+echo "This is my QUOTE $a_time_for_everything";
 ?>
+
+
 </div>
 <div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">MadisonShakespeare <a href="https://twitter.com/madshakes"> Twitter</a></div>
 
