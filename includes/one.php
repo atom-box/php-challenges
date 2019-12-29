@@ -2,14 +2,14 @@
 <!---------------------Begin Tabs-------------------->
   <h2 class="text-left inverse" >Initialize Arrays</h2>
 <ul class="nav nav-tabs" id="tab1" role="tablist">
-  <li class="nav-item"><h3>
-    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true">Goal</a></h3>
+  <li class="nav-item">
+    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true"><h3>Goal</h3></a>
   </li>
-  <li class="nav-item"><h3>
-    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false">Arrays</a></h3>
+  <li class="nav-item">
+    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false"><h3>Arrays</h3></a>
   </li>
-  <li class="nav-item"><h3>
-    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false">Further reading</a></h3>
+  <li class="nav-item">
+    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false"><h3>Further reading</h3></a>
   </li>
 </ul>
 <!---------------------Begin Content-------------------->
@@ -32,7 +32,7 @@ $players = array (
 "Leigha Vilen"  =>  array("Guildenstern"),
 "Evan Genest"  =>  array("Attendent", "Mourner", "Priest"));
 
-$a_time_for_everything = "A season for every activity under heaven:
+$ecclesiastes_string = "A season for every activity under heaven:
 a time to be born and a time to die,
 a time to plant and a time to uproot,
 a time to kill and a time to heal,
@@ -48,7 +48,10 @@ a time to be silent and a time to speak,
 a time to love and a time to hate,
 a time for war and a time for peace.";
 
-echo "This is my QUOTE $a_time_for_everything";
+$ecclesiastes_array = explode(' ', $ecclesiastes_string);
+
+echo "This is my QUOTE $ecclesiastes_string";
+echo "This word is fourth: [$ecclesiastes_array[3]] and ninth: [$ecclesiastes_array[8]].";
 ?>
 
 
