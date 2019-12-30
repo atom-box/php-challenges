@@ -1,143 +1,79 @@
-/* A variation on CSS I found in the https://www.officesupply.com homepage */
-.universal-loader2-container  {
+* {
+  
+}
+
+/*
+ * GENERAL STYLE *
+ *
+ */
+
+.title-colors {
+
+}
+
+
+
+.propped {
+  min-height: 16rem;
+
+}
+span.text-info {
+  font-weight: 100;
+  background-color: rgba(0,0,0, 0,5); ;
+}
+
+article.card.text-center {
+  margin-bottom: 1rem;
+}
+
+
+
+/*
+ * FOOTER STYLE *
+ *
+ */
+
+.overlay {
   position: absolute;
-  left: 45%;
-  top: 50%;
-  border: 16px solid transparent;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Black see-through */
+  width: 100%;
+  font-size: 20px;
+  padding: 20px;
+  color: white;
 }
 
-
-.left-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 11s linear infinite;
-  opacity: 0.3;
-  left: 45%;
-  top: 50%;
+address a {
+  color: yellow;
+}
+address a:hover {
+  color: white;
 }
 
-.right-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 23s linear infinite;
-  opacity: 0.3;    
-    left: 45%;
-  top: 50%;
-}
-.top-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 21s linear infinite;
-  opacity: 0.3;    
-  left: 35%;
-  top: 40%;
+.cinch {
+  max-width: 26rem;
 }
 
-.bottom-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 28s linear infinite;
-  opacity: 0.3;
-  left: 65%;
-  top: 20%;    
+.inverse {
+  background-color: #777;
+  color: white;
+  width: 15rem;
+  border-radius: 0.3rem;
+  padding-left: 2rem;
+  margin: 0.3rem;
 }
 
-.red-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 8s linear infinite;
-  color: red;
-  left: 35%;
-  top: 40%;
+.outpanel {
+  overflow: scroll;
+  border: dotted black 0.4rem;
+  height: 11rem;
+  max-width: 80%;
 }
-
-.blue-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 12s linear infinite;
-  color: blue;
-  left: 35%;
-  top: 40%;
+.outpanel-wide {
+  overflow: scroll;
+  border: dotted black 0.4rem;
+  height: 11rem;
+  width: 45rem;
+  font-size: 0.7rem;
+  text-align: left;
 }
-
-.green-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 16s linear infinite;
-  color: green;
-  left: 35%;
-  top: 40%;
-}
-
-.black-spin{
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 20s linear infinite;
-  color: black;
-  left: 35%;
-  top: 40%;
-}
-
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-      .propped {
-        min-height: 16rem;
-
-      }
-      span.text-info {
-        font-weight: 100;
-        background-color: rgba(0,0,0, 0,5); ;
-      }
-
-      article.card.text-center {
-        margin-bottom: 1rem;
-      }
-
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Black see-through */
-    width: 100%;
-    font-size: 20px;
-    padding: 20px;
-    color: white;
-  }
-
-  address a {
-    color: yellow;
-  }
-  address a:hover {
-    color: white;
-  }
-
-  .cinch {
-    max-width: 26rem;
-  }
-
-  .inverse {
-    background-color: #777;
-    color: white;
-    width: 15rem;
-    border-radius: 0.3rem;
-    padding-left: 2rem;
-    margin: 0.3rem;
-  }
-
-  .outpanel {
-    overflow: scroll;
-    border: dotted black 0.4rem;
-    height: 11rem;
-    max-width: 80%;
-  }
-  .outpanel-wide {
-    overflow: scroll;
-    border: dotted black 0.4rem;
-    height: 11rem;
-    width: 45rem;
-    font-size: 0.7rem;
-    text-align: left;
-  }
