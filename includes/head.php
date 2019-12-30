@@ -10,9 +10,9 @@
   <link rel="stylesheet" type="text/css" href="styles/solve.css">
 </head>
 <body>
-<div class="jumbotron">
+<div class="title-colors">
   <h1 class="display-4">Trial by P.H.P.</h1>
-  <p class="lead">Some PHP solutions to dev challenges.</p>
+  <p class="lead title-colors__alternate">Some PHP solutions to dev challenges.</p>
   <hr class="my-4">
 </div>
 

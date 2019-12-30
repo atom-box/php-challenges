@@ -1,5 +1,16 @@
-* {
-  
+:root {
+  --blackpanel: rgb(00, 0, 21) ;
+  --navypanel: rgb(2, 11, 35) ;
+  --whitepanel: rgb() ;
+  --blackpanel-text1: rgb(68, 197, 34) ;
+  --navypanel-text1: rgb(25, 80, 181) ;
+  --whitepanel-text1: rgb(68, 197, 34) ;
+  --blackpanel-text2: rgb() ;
+  --navypanel-text2: rgb(123, 211, 255) ;
+  --whitepanel-text2: rgb(7, 23, 49) ;
+  --blackpanel-text2hover: rgb() ;
+  --navypanel-text2hover: rgb(29, 93, 213) ;
+  --whitepanel-text2hover: rgb() ;
 }
 
 /*
@@ -8,9 +19,15 @@
  */
 
 .title-colors {
-
+  background-color: var(--navypanel);
+  color: var(--navypanel-text1);
+  /* copied from Bootstrap spec */
+  padding:2rem 1rem;margin-bottom:2rem;border-radius:.3rem
 }
 
+.title-colors__alternate {
+  color: var(--navypanel-text2);
+}
 
 
 .propped {
@@ -44,7 +61,8 @@ article.card.text-center {
 }
 
 address a {
-  color: yellow;
+  color: var(--navypanel-text2);
+  background-color: rgba(0, 0, 0 , 0.4);
 }
 address a:hover {
   color: white;
