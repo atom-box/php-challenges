@@ -9,17 +9,20 @@
     <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false"><h3>Arrays</h3></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false"><h3>Further reading</h3></a>
+    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false"><h3>PHP Syntax</h3></a>
   </li>
 </ul>
-<!---------------------Begin Content-------------------->
+<!---------------------Tab 1 Content-------------------->
 <div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab1Content">
 
 <div class="tab-pane fade show cinch active" id="challenge1" role="tabpanel" aria-labelledby="challenge-tab">
-  <p>Make an iterative PHP array. <br /><br />Make an associative PHP array.</p>
+  <p>Make an iterative PHP array. <br /><br />Make an associative PHP array.<br /><br />Turn a string into an array.</p>
 </div>
 <div class="tab-pane cinch fade" id="solution1" role="tabpanel" aria-labelledby="solution-tab">
+
+<!------- Tab 2 content: Initialize three arrays-------------->
 <?php 
+
 $words = array('Even', 'while', 'he', 'utters', 'his', 'cynical', 'wisdom', 'in', 'an', 'indescribably', 'droll', 'voice', 'he', 'makes', 'you', 'feel', 'that', 'his', 'heart', 'is', 'a', 'tender', 'Iliad', 'of', 'human', 'sympathy');
 
 $players = array (
@@ -50,13 +53,19 @@ a time for war and a time for peace.";
 
 $ecclesiastes_array = explode(' ', $ecclesiastes_string);
 
-echo "This is my QUOTE $ecclesiastes_string";
-echo "This word is fourth: [$ecclesiastes_array[3]] and ninth: [$ecclesiastes_array[8]].";
+echo nl2br("This is the start of the Ecclesiastes Array: \n\n");
+echo implode('-', array_slice($ecclesiastes_array, 0, 11) );
+
+$player1 = "Sam White";
+echo nl2br("\n\nThe player named $player1 is playing the part of \n\n") . implode($players[$player1]);
+
 ?>
 
 
 </div>
-<div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">MadisonShakespeare <a href="https://twitter.com/madshakes"> Twitter</a></div>
+
+<!------------Tab 3-------------->
+<div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">Code <a href="https://github.com/atom-box/php-challenges/blob/master/includes/one.php"> here </a></div>
 
 </div>
 </article>
