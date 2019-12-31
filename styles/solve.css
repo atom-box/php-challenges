@@ -29,6 +29,10 @@
   color: var(--navypanel-text2);
 }
 
+.article-title-colors {
+  color: #fff;
+  background-color: var(--whitepanel-text1) !important;
+}
 
 .propped {
   min-height: 16rem;

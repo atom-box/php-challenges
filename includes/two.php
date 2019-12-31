@@ -1,12 +1,12 @@
 <article class="card text-center">
 <!---------------------Begin Tabs-------------------->
-  <h2 class="text-left article-title-colors" >Initialize Arrays</h2>
+  <h2 class="text-left article-title-colors" >PHP Time</h2>
 <ul class="nav nav-tabs" id="tab1" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true"><h3>Goal</h3></a>
+    <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge1" role="tab" aria-controls="challenge" aria-selected="true"><h3>Time</h3></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false"><h3>Arrays</h3></a>
+    <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution1" role="tab" aria-controls="solution" aria-selected="false"><h3>Altered Time</h3></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="code-tab" data-toggle="tab" href="#code1" role="tab" aria-controls="code" aria-selected="false"><h3>PHP Syntax</h3></a>
