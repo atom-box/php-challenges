@@ -16,7 +16,15 @@
 <div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab1Content">
 
 <div class="tab-pane fade show cinch active" id="challenge1" role="tabpanel" aria-labelledby="challenge-tab">
-  <p>Make an iterative PHP array. <br /><br />Make an associative PHP array.<br /><br />Turn a string into an array.</p>
+  <h3> 
+  <?php     
+    echo nl2br("The Unix time is :\n"); 
+    echo time();
+    echo nl2br("\n\n");
+    echo nl2br("The date is :\n"); 
+    echo date('l F Y', time());
+  ?>
+</h3>
 </div>
 <div class="tab-pane cinch fade" id="solution1" role="tabpanel" aria-labelledby="solution-tab">
 
