@@ -9,13 +9,13 @@
     <a class="nav-link" id="solution-tab" data-toggle="tab" href="#solution2" role="tab" aria-controls="solution" aria-selected="false"><h3>Web</h3></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code2" role="tab" aria-controls="code" aria-selected="false"><h3>Check if Valid</h3></a>
+    <a class="nav-link" id="code-tab" data-toggle="tab" href="#code2" role="tab" aria-controls="code" aria-selected="false"><h3>Validate</h3></a>
   </li>
 </ul>
-<!---------------------Tab 1 Content-------------------->
-<div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab1Content">
+<!---------------------Tab 2 Content-------------------->
+<div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab2Content">
 
-<div class="tab-pane fade show cinch active" id="challenge1" role="tabpanel" aria-labelledby="challenge-tab">
+<div class="tab-pane fade show cinch active" id="challenge2" role="tabpanel" aria-labelledby="challenge-tab">
   <h3> 
   <?php     
     echo nl2br("The Unix time is :\n"); 
@@ -26,12 +26,11 @@
   ?>
 </h3>
 </div>
-<div class="tab-pane cinch fade" id="solution1" role="tabpanel" aria-labelledby="solution-tab">
-
+<div class="tab-pane cinch fade" id="solution2" role="tabpanel" aria-labelledby="solution-tab">
 
 <!------- Tab 2 content: Initialize three arrays-------------->
-<div class="tab-pane fade show cinch active" id="challenge2" role="tabpanel" aria-labelledby="challenge-tab">
-  <h3>
+
+<h3>
 <?php 
 
  
@@ -41,17 +40,20 @@
     echo nl2br("In RSS Format:\n"); 
     echo date(DATE_RSS);
     echo nl2br("\n\n");
-    echo nl2br("In WWW Format:\n"); 
-    echo time(DATE_W3C);
+    echo nl2br("In W3C Format:\n"); 
+    echo date(DATE_W3C);
+</h3>
 
 ?>
-</h3>
-</div>
+
 
 </div>
 
 <!------------Tab 3-------------->
-<div class="tab-pane fade cinch" id="code1" role="tabpanel" aria-labelledby="code-tab">Code <a href="https://github.com/atom-box/php-challenges/blob/master/includes/one.php"> here </a></div>
+<div class="tab-pane fade cinch" id="code2" role="tabpanel" aria-labelledby="code-tab">Code <a href="https://github.com/atom-box/php-challenges/blob/master/includes/two.php"> here </a></div>
 
 </div>
 </article>
+
+
+
