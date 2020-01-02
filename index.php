@@ -9,6 +9,10 @@ include 'includes/one.php';
 include 'includes/two.php';
 ?>
 
+<?php 
+include 'includes/three.php';
+?>
+
 <?php
 include 'includes/foot.php';
 ?>

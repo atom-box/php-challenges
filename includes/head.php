@@ -11,8 +11,8 @@
 </head>
 <body>
 <div class="title-colors">
-  <h1 class="display-4">Trial by P.H.P.</h1>
-  <p class="lead title-colors__alternate">Some PHP solutions to dev challenges.</p>
+  <h1 class="display-4">Trial by X.A.M.P.P.</h1>
+  <p class="lead title-colors__alternate">Using the <a href="https://www.apachefriends.org/blog.html"> XAMPP</a> server with PHP, MySQL, & Apache.</p>
   <hr class="my-4">
 </div>
 

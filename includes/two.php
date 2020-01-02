@@ -1,7 +1,7 @@
 <article class="card text-center">
 <!---------------------Begin Tabs-------------------->
   <h2 class="text-left article-title-colors" >PHP Time</h2>
-<ul class="nav nav-tabs" id="tab1" role="tablist">
+<ul class="nav nav-tabs" id="tab2" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="challenge-tab" data-toggle="tab" href="#challenge2" role="tab" aria-controls="challenge" aria-selected="true"><h3>Plain</h3></a>
   </li>
@@ -32,8 +32,6 @@
 
 <h3>
 <?php 
-
- 
     echo nl2br("In Cookie Format:\n"); 
     // echo date(DATE_COOOKIE);
     echo nl2br("\n\n");
@@ -42,9 +40,8 @@
     echo nl2br("\n\n");
     echo nl2br("In W3C Format:\n"); 
     echo date(DATE_W3C);
-</h3>
-
 ?>
+</h3>
 
 
 </div>
