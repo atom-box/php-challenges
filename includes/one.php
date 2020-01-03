@@ -16,7 +16,10 @@
 <div class="tab-content propped d-flex  align-items-center justify-content-around" id="tab1Content">
 
 <div class="tab-pane fade show cinch active" id="challenge1" role="tabpanel" aria-labelledby="challenge-tab">
-  <p>Make an iterative PHP array. <br /><br />Make an associative PHP array.<br /><br />Turn a string into an array.</p>
+  <ol>
+  <li>Make an iterative PHP array.</li>
+  <li>Make an associative PHP array.</li>
+  </ol>
 </div>
 <div class="tab-pane cinch fade" id="solution1" role="tabpanel" aria-labelledby="solution-tab">
 
@@ -52,12 +55,17 @@ a time to love and a time to hate,
 a time for war and a time for peace.";
 
 $ecclesiastes_array = explode(' ', $ecclesiastes_string);
-
-echo nl2br("This is the start of the Ecclesiastes Array: \n\n");
-echo implode('-', array_slice($ecclesiastes_array, 0, 11) );
+?>
+<p><strong>Iterative Array</strong></p>
+<?php
+echo nl2br("If you join the first 11 words of the array you get this: \n\n");
+echo implode('%', array_slice($ecclesiastes_array, 0, 11) );
+?>
+<p><strong><br />Associative Array</strong></p>
+<?php
 
 $player1 = "Sam White";
-echo nl2br("\n\nThe player named $player1 is playing the part of \n\n") . implode($players[$player1]);
+echo nl2br("On 2/29/2020, Madison Shakespeare's Hamlet will have an actor named [$player1] who is playing the part of \n\n") . implode($players[$player1]);
 
 ?>
 
