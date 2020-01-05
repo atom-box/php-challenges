@@ -1,9 +1,3 @@
-<p> 
-
-<?php
-
-
-echo ' 
 <form action="" method="">
 <pre>
   Author <input type="text" name="author" />
@@ -11,9 +5,15 @@ echo '
   Category <input type="text" name="category" />
   Year <input type="text" name="year" />
   ISBN <input type="text" name="isbn" />
-
 </pre>
 </form>
+
+<p> 
+<?php
+
+
+echo ' 
+//////
 ';
 
 
