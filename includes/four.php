@@ -22,6 +22,21 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
   <input type="radio" name="first" value="5" checked> 5<br>
   <input type="radio" name="first" value="13"> 13<br>
   <input type="radio" name="first" value="42"> 42 <br>
+   <select name="second">
+    <option value="12">12</option>
+    <option value="14">14</option>
+    <option value="16">16</option>
+    <option value="18">18</option>
+  </select><br/>
+  <input type="radio" name="third" value="5" checked> 5<br>
+  <input type="radio" name="third" value="13"> 13<br>
+  <input type="radio" name="third" value="42"> 42 <br>
+   <select name="fourth">
+    <option value="12">12</option>
+    <option value="14">14</option>
+    <option value="16">16</option>
+    <option value="18">18</option>
+  </select><br/>
   <input type="submit" value="Submit"> 
 </form> 
 <?php
