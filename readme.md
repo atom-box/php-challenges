@@ -5,4 +5,5 @@ pre-dates PHP 5.  So far the main difference has been that mysqli should replace
 ## From the book ______, 2019
 I am trying out the PHP v7 syntax.
 ## From various online challenges
-I am solving short challenges, e.g. [Coding Bat](https://codingbat.com/java) from Stanford University.
+I am solving short challenges, e.g. [Coding Bat](https://codingbat.com/java) from Stanford University.<br />
+The INCLUDES folder has most of the active development.
