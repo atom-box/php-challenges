@@ -18,6 +18,12 @@ biggerTwo([1, 2], [3, 4]) → [3, 4]
 biggerTwo([3, 4], [1, 2]) → [3, 4]
 biggerTwo([1, 1], [1, 2]) → [1, 2]
 </pre>
+
+<div class="d-flex justify-content-around ">
+  <div class="inverse framed d-flex justify-content-center" >Gordy</div>
+  <div class="inverse framed d-flex justify-content-center" >Howe</div>
+</div>
+
 <form>
   <input type="radio" name="first" value="5" checked> 5<br>
   <input type="radio" name="first" value="13"> 13<br>

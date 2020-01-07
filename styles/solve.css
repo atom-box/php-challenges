@@ -77,25 +77,30 @@ address a:hover {
 }
 
 .inverse {
-  background-color: #777;
-  color: white;
-  width: 15rem;
+  background-color: var(--blackpanel);
+  color: var(--blackpanel-text1 );
+  max-width: 23%;
+  min-width: 20rem;
   border-radius: 0.3rem;
   padding-left: 2rem;
   margin: 0.3rem;
 }
 
-.outpanel {
+.xoutpanel {
   overflow: scroll;
   border: dotted black 0.4rem;
   height: 11rem;
   max-width: 80%;
 }
-.outpanel-wide {
+.xoutpanel-wide {
   overflow: scroll;
   border: dotted black 0.4rem;
   height: 11rem;
   width: 45rem;
   font-size: 0.7rem;
   text-align: left;
+}
+
+.framed {
+  border: solid 0.3rem var(--blackpanel-text1);
 }
