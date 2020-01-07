@@ -80,7 +80,7 @@ address a:hover {
   background-color: var(--blackpanel);
   color: var(--blackpanel-text1 );
   max-width: 23%;
-  min-width: 20rem;
+  min-width: 10rem;
   border-radius: 0.3rem;
   padding-left: 2rem;
   margin: 0.3rem;
