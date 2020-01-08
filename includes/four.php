@@ -19,7 +19,7 @@ biggerTwo([3, 4], [1, 2]) → [3, 4]
 biggerTwo([1, 1], [1, 2]) → [1, 2]
 </pre>
 
-<form class="d-flex justify-content-around ">
+<form action="./includes/welcome.php" method="post" class="d-flex justify-content-around ">
   <div class="inverse framed d-flex justify-content-center" >
     <input type="radio" name="first" value="5" checked> 5<br>
     <input type="radio" name="first" value="13"> 13<br>
@@ -56,16 +56,7 @@ E-mail: <input type="text" name="email"><br>
 <input type="submit">
 </form>
 
-<?php
-if (isset($_POST["first"])){
-  echo $_POST["first"];
-} else {
-  echo "pfffft.";
-}
 
-
-
-?>
   </div>
 </div>
 </article>
