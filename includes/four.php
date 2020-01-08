@@ -50,10 +50,18 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
   <input type="submit" value="Submit"> 
 </form>
 
+<form action="./includes/welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
 <?php
-
-
-
+if (isset($_POST["first"])){
+  echo $_POST["first"];
+} else {
+  echo "pfffft.";
+}
 
 
 
