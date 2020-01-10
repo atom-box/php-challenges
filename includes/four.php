@@ -19,14 +19,14 @@ biggerTwo([3, 4], [1, 2]) → [3, 4]
 biggerTwo([1, 1], [1, 2]) → [1, 2]
 </pre>
 
-<form action="./includes/welcome.php" method="post" class="d-flex justify-content-around ">
+<form action="./index.php" method="post" class="d-flex justify-content-around ">
   <div class="inverse framed d-flex justify-content-center" >
-    <input type="radio" name="first" value="5" checked> 5<br>
-    <input type="radio" name="first" value="13"> 13<br>
-    <input type="radio" name="first" value="42"> 42 <br>
+    <input type="radio" name="a1" value="5" checked> 5<br>
+    <input type="radio" name="a1" value="13"> 13<br>
+    <input type="radio" name="a1" value="42"> 42 <br>
   </div>
   <div class="inverse framed d-flex justify-content-center" >
-    <select name="second">
+    <select name="a2">
     <option value="12">12</option>
     <option value="14">14</option>
     <option value="16">16</option>
@@ -34,12 +34,12 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
     </select><br/>
   </div>
   <div class="inverse framed d-flex justify-content-center" >
-    <input type="radio" name="third" value="5" checked> 5<br>
-    <input type="radio" name="third" value="13"> 13<br>
-    <input type="radio" name="third" value="42"> 42 <br>
+    <input type="radio" name="b1" value="5" checked> 5<br>
+    <input type="radio" name="b1" value="13"> 13<br>
+    <input type="radio" name="b1" value="42"> 42 <br>
   </div>
   <div class="inverse framed d-flex justify-content-center" >
-    <select name="fourth">
+    <select name="b2">
     <option value="12">12</option>
     <option value="14">14</option>
     <option value="16">16</option>
@@ -50,12 +50,22 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
   <input type="submit" value="Submit"> 
 </form>
 
-<form action="./includes/welcome.php" method="post">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
+<div class="inverse framed d-flex justify-content-center" >
+<?php
 
+if (isset($_POST["a1"])){
+  $a1 = (int)$_POST["a1"];
+  $a2 = (int)$_POST["a2"];
+  $b1 = (int)$_POST["b1"];
+  $b2 = (int)$_POST["b2"];
+  $result = $a1 + $a2 + $b1 + $b2;
+  echo "Lookin at some " .  $result;
+} else {
+  echo "";
+}
+
+?>
+</div>
 
   </div>
 </div>
