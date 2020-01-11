@@ -50,22 +50,49 @@ biggerTwo([1, 1], [1, 2]) → [1, 2]
   <input type="submit" value="Submit"> 
 </form>
 
-<div class="inverse framed d-flex justify-content-center" >
-<?php
+<div  class="d-flex justify-content-around ">
+    <div class="inverse framed  justify-content-center" >
+      <p>Array A is </p>
+      <?php
+        $a1 = $_POST["a1"] ?? 0; // null coalescing operator, PHP7 defaults!
+        $a1 = (int) $a1; 
+        $a2 = $_POST["a2"] ?? 0; // null coalescing operator, PHP7 defaults!
+        $a2 = (int) $a2; 
 
-if (isset($_POST["a1"])){
-  $a1 = (int)$_POST["a1"];
-  $a2 = (int)$_POST["a2"];
-  $b1 = (int)$_POST["b1"];
-  $b2 = (int)$_POST["b2"];
-  $result = $a1 + $a2 + $b1 + $b2;
-  echo "Lookin at some " .  $result;
-} else {
-  echo "";
-}
+        echo "($a1, $a2)";
+      ?>
+    </div>
+    <div class="inverse framed  justify-content-center" >
+      <p>Array B is </p>
+      <?php
+        $b1 = $_POST["b1"] ?? 0; // null coalescing operator, PHP7 defaults!
+        $b1 = (int) $b1; 
+        $b2 = $_POST["b2"] ?? 0; // null coalescing operator, PHP7 defaults!
+        $b2 = (int) $b2;         
+        echo "($b1, $b2)";
+      ?>
+    </div>
+    <div class="inverse framed justify-content-center" >
+      <p>The greater sum is</p>
+      <?php
 
-?>
+        if (isset($_POST["a1"])){
+          $a1 = (int)$_POST["a1"];
+          $a2 = (int)$_POST["a2"];
+          $b1 = (int)$_POST["b1"];
+          $b2 = (int)$_POST["b2"];
+          $result = $a1 + $a2;
+          if ($a1 + $a2 < ($b1 + $b2)){
+            $result = $b1 + $b2;
+          }
+          echo  $result;
+        } else {
+          echo 0;
+        }
+      ?>
+    </div>
 </div>
+
 
   </div>
 </div>
