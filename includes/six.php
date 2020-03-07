@@ -21,7 +21,7 @@
     </ol>
 
 <form action="./index.php" method="post" class="d-flex justify-content-around ">
-  <div class="bluelook framed d-flex justify-content-center" >
+  <div class=" d-flex justify-content-center" >
 <div class="slidecontainer ">
   <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
 </div>
