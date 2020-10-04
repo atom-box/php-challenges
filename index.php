@@ -1,15 +1,193 @@
 <?php
-// Autoload files using composer
-require_once __DIR__ . '/vendor/autoload.php';
 
 // Use this namespace
 use Steampixel\Route;
 
-// Add your first route
+// Include router class
+include 'src/Steampixel/Route.php';
+
+// Define a global basepath
+define('BASEPATH','/');
+
+// If your script lives in a subfolder you can use the following example
+// Do not forget to edit the basepath in .htaccess if you are on apache
+// define('BASEPATH','/api/v1');
+
+function navi() {
+  echo '
+  <h1>Heello from navi() vunction?</h1>
+  Navigation:
+  <ul>
+      <li><a href="'.BASEPATH.'">home</a></li>
+      <li><a href="'.BASEPATH.'index.php">index.php</a></li>
+      <li><a href="'.BASEPATH.'user/3/edit">edit user 3</a></li>
+      <li><a href="'.BASEPATH.'foo/5/bar">foo 5 bar</a></li>
+      <li><a href="'.BASEPATH.'foo/bar/foo/bar">long route example</a></li>
+      <li><a href="'.BASEPATH.'contact-form">contact form</a></li>
+      <li><a href="'.BASEPATH.'get-post-sample">get+post example</a></li>
+      <li><a href="'.BASEPATH.'test.html">test.html</a></li>
+      <li><a href="'.BASEPATH.'blog/how-to-use-include-example">How to push data to included files</a></li>
+      <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
+      <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
+      <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
+      <li><a href="'.BASEPATH.'theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
+      <li><a href="'.BASEPATH.'thecasedoesnotmatter">thecasedoesnotmatter</a></li>
+      <li><a href="'.BASEPATH.'this-route-is-not-defined">404 Test</a></li>
+      <li><a href="'.BASEPATH.'this-route-is-defined">405 Test</a></li>
+  </ul>
+  <h4>Clarion. From the navi function</h4>
+  ';
+}
+
+function second() {
+    echo '<h3>a second function ran here.</h3>';
+}
+
+// Add base route (startpage)
 Route::add('/', function() {
+  navi();
   echo 'Welcome :-)';
 });
 
-// Run the router
-Route::run('/');
-?>
+// Another base route example
+Route::add('/index.php', function() {
+//   navi();
+  second();
+  echo 'You are not really on index.php ;-)';
+});
+
+// Evan Genest Test
+Route::add('/foo.bar', function() {
+      second();
+      echo 'ECHO THIS LINE ;-)';
+    });
+
+// Simple test route that simulates static html file
+Route::add('/test.html', function() {
+  navi();
+  echo 'Hello from test.html';
+});
+
+// This example shows how to include files and how to push data to them
+Route::add('/blog/([a-z-0-9-]*)', function($slug) {
+  navi();
+  include('include-example.php');
+});
+
+// This route is for debugging only
+// It simply prints out some php infos
+// Do not use this route on production systems!
+Route::add('/phpinfo', function() {
+  navi();
+  phpinfo();
+});
+
+// Get route example
+Route::add('/contact-form', function() {
+  navi();
+  echo '<form method="post"><input type="text" name="test"><input type="submit" value="send"></form>';
+}, 'get');
+
+// Post route example
+Route::add('/contact-form', function() {
+  navi();
+  echo 'Hey! The form has been sent:<br>';
+  print_r($_POST);
+}, 'post');
+
+// Get and Post route example
+Route::add('/get-post-sample', function() {
+  navi();
+	echo 'You can GET this page and also POST this form back to it';
+	echo '<form method="post"><input type="text" name="input"><input type="submit" value="send"></form>';
+	if (isset($_POST['input'])) {
+		echo 'I also received a POST with this data:<br>';
+		print_r($_POST);
+	}
+}, ['get','post']);
+
+// Route with regexp parameter
+// Be aware that (.*) will match / (slash) too. For example: /user/foo/bar/edit
+// Also users could inject SQL statements or other untrusted data if you use (.*)
+// You should better use a saver expression like /user/([0-9]*)/edit or /user/([A-Za-z]*)/edit
+Route::add('/user/(.*)/edit', function($id) {
+  navi();
+  echo 'Edit user with id '.$id.'<br>';
+});
+
+// Accept only numbers as parameter. Other characters will result in a 404 error
+Route::add('/foo/([0-9]*)/bar', function($var1) {
+  navi();
+  echo $var1.' is a great number!';
+});
+
+// Crazy route with parameters
+Route::add('/(.*)/(.*)/(.*)/(.*)', function($var1,$var2,$var3,$var4) {
+  navi();
+  echo 'This is the first match: '.$var1.' / '.$var2.' / '.$var3.' / '.$var4.'<br>';
+});
+
+// Long route example
+// By default this route gets never triggered because the route before matches too
+Route::add('/foo/bar/foo/bar', function() {
+  echo 'This is the second match (This route should only work in multi match mode) <br>';
+});
+
+// Trailing slash example
+Route::add('/aTrailingSlashDoesNotMatter', function() {
+  navi();
+  echo 'a trailing slash does not matter<br>';
+});
+
+// Case example
+Route::add('/theCaseDoesNotMatter',function() {
+  navi();
+  echo 'the case does not matter<br>';
+});
+
+// TODO this is redundant
+Route::add('/bat',function() {
+    navi();
+    echo 'Found the BAT!!!!!!!!!!<br>';
+  });
+
+  // TODO this is redundant
+Route::add('/bat/foo.bar',function() {
+    navi();
+    echo 'Found the foooooobarrrrrrrrr!!!!!!!!!!<br>';
+  });
+
+
+// 405 test
+Route::add('/this-route-is-defined', function() {
+  navi();
+  echo 'You need to patch this route to see this content';
+}, 'patch');
+
+// Add a 404 not found route
+Route::pathNotFound(function($path) {
+  // Do not forget to send a status header back to the client
+  // The router will not send any headers by default
+  // So you will have the full flexibility to handle this case
+  header('HTTP/1.0 404 Not Found');
+  navi();
+  echo 'Error 404 :-(<br>';
+  echo 'Evan\'s requested path "'.$path.'" was not found!';
+});
+
+// Add a 405 method not allowed route
+Route::methodNotAllowed(function($path, $method) {
+  // Do not forget to send a status header back to the client
+  // The router will not send any headers by default
+  // So you will have the full flexibility to handle this case
+  header('HTTP/1.0 405 Method Not Allowed');
+  navi();
+  echo 'Error 405 :-(<br>';
+  echo 'The requested path "'.$path.'" exists. But the request method "'.$method.'" is not allowed on this path!';
+});
+
+// Run the Router with the given Basepath
+Route::run(BASEPATH);
+
+// Enable case sensitive mode, trailing slashes and multi match mode by setting the params to true
+// Route::run(BASEPATH, true, true, true);
