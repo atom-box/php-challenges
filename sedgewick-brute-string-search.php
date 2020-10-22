@@ -9,8 +9,16 @@ function searcher($pattern, $text){
     $m = strlen($pattern);
     $n = strlen($text);
 
-
-    return -1;
+    for ($i = 0; $i <= $n - $m; $i++){
+        for ($j =0; $j < $m; $j++){
+            if ($text[$i+$j] !== $pattern[$j]){
+                break;
+            }
+        }
+        if ($j == $m){ 
+            return $i;
+        } // found at, wait for it... i!
+    }
 }
 
 function hasBad($look_in){
@@ -22,7 +30,7 @@ function hasBad($look_in){
     return 'fffalse';
 }
 
-echo("Todo: put in types.");
+echo("Todo: put in types.\n");
 echo(hasBad("badxx")."\n"); // true
 echo(hasBad("xbadxx")."\n"); // true
 echo(hasBad("xxbadxx")."\n"); // false
