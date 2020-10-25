@@ -18,8 +18,8 @@ function arrayFront9(array $numbers){
 }    
 
 
-echo(arrayFront9([1, 2, 9, 3, 4])); // true
-echo(arrayFront9([1, 2, 3, 4, 9])); // false
-echo(arrayFront9([1, 2, 3, 4, 5])); // false
-echo(arrayFront9([1, 9])); // true
-echo(arrayFront9([1, 2])); // false
+echo(arrayFront9([1, 2, 9, 3, 4])."\n"); // true
+echo(arrayFront9([1, 2, 3, 4, 9])."\n"); // false
+echo(arrayFront9([1, 2, 3, 4, 5])."\n"); // false
+echo(arrayFront9([1, 9])."\n"); // true
+echo(arrayFront9([1, 2])."\n"); // false
