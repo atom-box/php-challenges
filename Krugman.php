@@ -12,6 +12,10 @@ class Krugman {
         $this -> name = $s;
     }
 
+    function get_name(){
+        return $this -> name;
+    }
+
     public function advise(){
         echo "Borrowing stimulates.\n";
     }
@@ -20,3 +24,5 @@ class Krugman {
 
 $x = new Krugman();
 $x -> advise();
+$x -> set_name('Paul');
+echo($x -> get_name()."\n");
