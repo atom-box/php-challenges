@@ -12,7 +12,7 @@
 //     times. Write the helper entirely below and 
 //     at the same indent level as roundSum().
 
-function rounder($rawInt){
+function fiveAndUp($rawInt){
     $tailDigit = $rawInt % 10;
     if ( in_array($tailDigit,   [0, 1, 2, 3, 4]  ) ){
         return false;
@@ -20,10 +20,23 @@ function rounder($rawInt){
     return true;
 }
 
+function rounder(int $rawInt){
+    $tailDigit = $rawInt % 10;
+    if ( in_array($tailDigit,   [0, 1, 2, 3, 4]  ) ){
+        $roundedInt = (int)($rawInt / 10) * 10;
+        echo "Rounded int is [$roundedInt]";
+        return $roundedInt;
+    }
+
+
+    $roundedInt = $rawInt;  // TODO TODO
+    return $roundedInt;
+}
+
 function roundSum($numbers){
     $sum = 0;
     foreach($numbers as $number){
-        $sum += $number;
+        $sum += rounder($number);
     }
     return $sum;
 }
