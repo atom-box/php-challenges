@@ -31,3 +31,4 @@ class Krugman implements Activist, Adult {
         echo ("Now please pay me FEE dollars.");
     }
 }
+
