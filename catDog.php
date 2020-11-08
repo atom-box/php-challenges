@@ -6,7 +6,10 @@ interface Stringchecker {
 
 class CatDog implements Stringchecker {
     public function wordbalance (string $s){
-        return "Length is ". strlen($s)."\n";
+        $dogcount = preg_match('/[\^|1]/i', $s, $matches);
+        echo count($matches);
+        $test1 = true;
+        return $test1 ? 'TRUE!' : 'FALSE!';
     }
 }
 
