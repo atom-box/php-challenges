@@ -5,14 +5,14 @@ interface Adult {
     public function vote(string $candidate);
 }
 
-interface Activist {
+interface nonProfiteer {
     const FEE = 0;
 
     public function giveAdvice(string $verb);
     public function requestFee();
 }
 
-class Krugman implements Activist, Adult {
+class Activist implements nonProfiteer, Adult {
     function __construct(string $strategy){
         $this -> bank = 5000;
         $this -> strategy = $strategy;
@@ -25,10 +25,16 @@ class Krugman implements Activist, Adult {
         echo("I voted for $candidate.");
     }
     public function giveAdvice(string $verb){
-        echo("To deal with $verb ing we should $strategy.");
+        echo("To deal with $verb ing we should $this->strategy.");
     }
     public function requestFee(){
         echo ("Now please pay me FEE dollars.");
     }
 }
+
+$vanJones = new Activist("synergize with the white environmentalists.");
+$vanJones->giveAdvice("police violenc");
+
+$krugman = new Activist("implement a stimulus with borrowed money");
+$krugman->giveAdvice('police violenc');
 
