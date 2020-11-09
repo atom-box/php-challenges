@@ -1,4 +1,6 @@
 <?php 
+// Return true if the string "cat" and "dog" appear the same number of times in the given string.
+
 
 interface Stringchecker {
     public function wordbalance (string $s);
@@ -18,7 +20,6 @@ class CatDog implements Stringchecker {
 
 
 
-// Return true if the string "cat" and "dog" appear the same number of times in the given string.
 
 $foo = new CatDog();
 
