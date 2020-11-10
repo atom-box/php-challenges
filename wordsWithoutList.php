@@ -8,6 +8,7 @@
 interface ListShortener {
     public function enter(array $words, int $reave); 
     public function printNewList();
+    public function packTheArray() : array;
 } 
 
 class tooLongGone implements ListShortener {
@@ -28,6 +29,16 @@ class tooLongGone implements ListShortener {
         echo "There were no LENGTH[".$this->unwanted_size."] above.\n";
     }
     
+    public function packTheArray() : array{
+        foreach($this->words as $word){
+            if(strlen($word) != $this->unwanted_size){
+                $this->words[] = $word;
+            }
+        }
+        return $this->words;
+    }
+
+
 }
 
 
@@ -40,3 +51,5 @@ $foo -> enter(["a", "bb", "b", "ccc"], 3); // ["a", "bb", "b"]
 $foo -> printNewList();
 $foo -> enter(["a", "bb", "b", "ccc"], 4); // ["a", "bb", "b", "ccc"]
 $foo -> printNewList();
+
+print_r($foo->packTheArray());
