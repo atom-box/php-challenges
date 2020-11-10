@@ -3,19 +3,29 @@
 // Given an array of strings, return a new List (e.g. an ArrayList) where 
 // all the strings of the given length are omitted. 
 
+// TODO refactor to have __CONSTRUCT
+
 interface ListShortener {
-    public function enter(array $words, int $reave) : array ; 
+    public function enter(array $words, int $reave); 
     public function printNewList();
 } 
 
 class tooLongGone implements ListShortener {
-    public function enter(array $words, int $reave) : array {
-        echo "Hellow. ";
-        return [1, 0];
+
+    public function enter(array $words, int $unwanted_size) {
+        $this->words = $words;
+        $this->unwanted_size = $unwanted_size; 
+        echo "Hellow.? ";
     } 
 
     public function printNewList(){
-        echo "Goodbyew. ";
+        echo("Unwanted size is $this->unwanted_size \n" );
+        foreach($this->words as $word){
+            if(strlen($word) != $this->unwanted_size){
+                echo "$word \n";
+            }
+        }
+        echo "There were no LENGTH[".$this->unwanted_size."] above.\n";
     }
     
 }
