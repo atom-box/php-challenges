@@ -1,22 +1,24 @@
 <?php
 
-// Return the number of times that the string "code" appears anywhere in 
-// the given string, except we'll accept any letter for the 'd', 
-// so "cope" and "cooe" count.
+// Return the number of times that the string "coney" appears anywhere in 
+// the given string, except we'll accept any vowels 
+// so "caney" and "cinoy" count.
 
 interface Counter {
-    public function countCode(string $s) : int ;
+    public function countConeys(string $s) : int ;
 }
 
 class StringUtility implements Counter {
-    public function countCode(string $s) : int {
-        return 99;
+
+    public function countConeys(string $s) : int {
+        return preg_match_all('/c[aeiouy]n[aeiouy]y/i', $s);
+        // return 99;
     }
  
 }
 
 $editor = new StringUtility();
 
-echo($editor->countCode("aaacodebbb")."\n"); // 1
-echo($editor->countCode("codexxcode")."\n"); // 2
-echo($editor->countCode("cozexxcope")."\n"); // 2
+echo($editor->countConeys("aaaconeybbb")."\n"); // 1
+echo($editor->countConeys("caneyxxconey")."\n"); // 2
+echo($editor->countConeys("cinayxcunoy")."\n"); // 2
