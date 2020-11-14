@@ -9,19 +9,32 @@ interface Counter {
 }
 
 interface EditorTools {
-    public function worditize;
-    public function munch;
-    public function standardize;
+    public function worditize(string $wordString) : array;
+    public function munch(string $dirtyWord) : string;
+    public function standardize(string $chaosWord) : string;
 }
 
 
 
-class StringUtility implements Counter {
-
+class StringUtility implements Counter, EditorTools {
+    
     public function countConeys(string $s) : int {
         return preg_match_all('/c[aeiouy]n[aeiouy]y/i', $s);
         // return 99;
     } 
+    
+    public function worditize(string $wordString) : array {
+        return explode(' ', $wordString);
+    }
+    
+    public function munch(string $dirtyWord) : string {
+        return "canary";
+    }
+    
+    public function standardize(string $chaosWord) : string {
+        return "canary";
+    }
+
 }
 
 
@@ -37,16 +50,13 @@ class StringUtility implements Counter {
 
 
 // Is there a better place for this data? TODO
-$testQuote = '“The art is not one of forgetting but letting go. And when everything else is gone, you can be rich in loss.”' 
+$testQuote = '“The art is not one of forgetting but letting go. And when everything else is gone, you can be rich in loss.”'; 
 
 
 $editor = new StringUtility();
 
-echo($editor->countConeys("aaaconeybbb")."\n"); // 1
-echo($editor->countConeys("caneyxxconey")."\n"); // 2
-echo($editor->countConeys("cinayxcunoy")."\n"); // 2
-
-
+print_r($editor->worditize($testQuote)); 
+// todo 1) constructor 2) allow for $solnit = new Wordmass
 
 
 // extract words to array, trim, standardize case, find redundants, sort, histogram
