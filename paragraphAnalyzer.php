@@ -4,11 +4,9 @@
 // the given string, except we'll accept any vowels 
 // so "caney" and "cinoy" count.
 
-interface Counter {
-    public function countConeys(string $s) : int ;
-}
 
 interface EditorTools {
+    public function oldbreakingfunction(string $wordString) : array;
     public function worditize(string $wordString) : array;
     public function munch(string $dirtyWord) : string;
     public function standardize(string $chaosWord) : string;
@@ -16,17 +14,26 @@ interface EditorTools {
 
 
 
-class StringUtility implements Counter, EditorTools {
-    
-    public function countConeys(string $s) : int {
-        return preg_match_all('/c[aeiouy]n[aeiouy]y/i', $s);
-        // return 99;
-    } 
-    
-    public function worditize(string $wordString) : array {
+class StringUtility implements EditorTools {
+        
+    public function oldbreakingfunction(string $wordString) : array {
+        // todo        resplit on slash, underscore
         return explode(' ', $wordString);
     }
-    
+
+    public function worditize(string $wordString) : array {
+        $words = [];
+        $tok = strtok($wordString, " /\-@%");
+        while($tok !== false){
+            $words[] = $tok;
+            $tok = strtok(" /\-@%");
+            echo "TOKENLENGTH: ".strlen($tok)." WORDSinARRAY: ".count($words) ."\n";
+        }
+        return $words;
+    }
+
+
+    // strip whites/non-alphas except internal ['-] 
     public function munch(string $dirtyWord) : string {
         return "canary";
     }
@@ -69,3 +76,4 @@ print_r($editor->worditize($testQuote));
 //   find redundantsarray
 //   sortarray
 //   histogram
+
