@@ -27,7 +27,6 @@ class StringUtility implements EditorTools {
         while($tok !== false){
             $words[] = $tok;
             $tok = strtok(" /\-@%");
-            echo "TOKENLENGTH: ".strlen($tok)." WORDSinARRAY: ".count($words) ."\n";
         }
         return $words;
     }
