@@ -29,12 +29,14 @@ class StringUtility implements EditorTools {
             $tok = strtok(" /\-@%");
         }
         return $words;
+        // Idea: 1. sub dashes to spaces 2. explode
     }
 
 
     // strip whites/non-alphas except internal ['-] 
     public function munch(string $dirtyWord) : string {
-        return "canary";
+        $trimmedWord = trim($dirtyWord, ' !@#$%^&*()\'"<>,.');
+        return $trimmedWord;
     }
     
     public function standardize(string $chaosWord) : string {
@@ -56,14 +58,16 @@ class StringUtility implements EditorTools {
 
 
 // Is there a better place for this data? TODO
-$testQuote = '“The art is not one of forgetting but letting go. And when everything else is gone, you can be rich in loss.”'; 
-
-
+$solnitQuote = '“The art is not one of forgetting but letting go. And when everything else is gone, you can be rich in loss.”'; 
+$symboledQuote = 'Why say "willow" when you cat-fans of @dude can say-like "w-in\'do" ';
+$symboledWord = '^ <my!';
 $editor = new StringUtility();
 
-print_r($editor->worditize($testQuote)); 
+print_r($editor->worditize($solnitQuote)); 
 // todo 1) constructor 2) allow for $solnit = new Wordmass
 
+
+echo($editor->munch($symboledWord));
 
 // extract words to array, trim, standardize case, find redundants, sort, histogram
 // EditorTools
