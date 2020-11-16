@@ -10,6 +10,7 @@ interface EditorTools {
     public function worditize(string $wordString) : array;
     public function munch(string $dirtyWord) : string;
     public function standardize(string $chaosWord) : string;
+    public function parToGoodWords(string $paragraph) : array;
 }
 
 
@@ -35,13 +36,25 @@ class StringUtility implements EditorTools {
 
     // strip whites/non-alphas except internal ['-] 
     public function munch(string $dirtyWord) : string {
-        $trimmedWord = trim($dirtyWord, ' !@#$%^&*()\'"<>,.');
+        $trimmedWord = trim($dirtyWord, ' !@#$%^&*()\'"<>\.,');
         return $trimmedWord;
     }
     
     public function standardize(string $chaosWord) : string {
-        return "canary";
+        return strtolower($chaosWord);
     }
+
+    public function parToGoodWords(string $paragraph) : array{
+        $dirtyList = $this->worditize($paragraph);
+        $cleanList = [];
+        foreach($dirtyList as $dirtyWord){
+            $cleanWord = $this->munch($dirtyWord);
+            $lowerWord  = $this->standardize($cleanWord);
+            $cleanList[] = $lowerWord;
+        }
+        return $cleanList;
+    }
+
 
 }
 
@@ -58,12 +71,12 @@ class StringUtility implements EditorTools {
 
 
 // Is there a better place for this data? TODO
-$solnitQuote = '“The art is not one of forgetting but letting go. And when everything else is gone, you can be rich in loss.”'; 
+$solnitQuote = '“The. Art. Is. Not. One. Of "forgetting" but lettin\' go. And when everything else is gone, you can be rich in loss.”.'; 
 $symboledQuote = 'Why say "willow" when you cat-fans of @dude can say-like "w-in\'do" ';
 $symboledWord = '^ <my!';
 $editor = new StringUtility();
 
-print_r($editor->worditize($solnitQuote)); 
+print_r($editor->parToGoodWords($solnitQuote)); 
 // todo 1) constructor 2) allow for $solnit = new Wordmass
 
 
