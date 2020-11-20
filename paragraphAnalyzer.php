@@ -64,8 +64,9 @@ class StringUtility implements EditorTools, HistogramTools {
     
     // longlist -> unredundant, ordered (hence shorter)
     public function shrinkList(array $longMessy) : array {
-        
-        return ['thanks','for','the','gumball'];
+        sort($longMessy);
+        $sorteds = $longMessy;
+        return $sorteds;
     }
     
 }
@@ -83,17 +84,21 @@ class StringUtility implements EditorTools, HistogramTools {
 
 
 // Is there a better place for this data? TODO
-$solnitQuote = '“The. Art. Is. Not. One. Of "forgetting" but lettin\' go. And when everything else is gone, you can be rich in loss.”.'; 
-$symboledQuote = 'Why say "willow" when you cat-fans of @dude can say-like "w-in\'do" ';
-$symboledWord = '^ <my!';
+// TEST DATA
+$SOLNIT_QUOTE = '“The. Art. Is. Not. One. Of "forgetting" but lettin\' go. And when everything else is gone, you can be rich in loss.”.'; 
+$SYMBOLED_QUOTE = 'Why say "willow" when you cat-fans of @dude can say-like "w-in\'do" ';
+$SYMBOLED_WORD = '^ <my!';
+$PHAROAH_ARRAY = ['cedar', 'trees',  'and', 'exotic', 'items', 'His', 'expedition', 'to', 'the', 'land', 'of', 'Punt', 'brought', 'back', 'large', 'quantities', 'of', 'myrrh', 'malachite', 'and', 'electrum' ];
 $editor = new StringUtility();
 
-print_r($editor->parToGoodWords($solnitQuote)); 
+print_r($editor->parToGoodWords($SOLNIT_QUOTE)); 
 // todo 1) constructor 2) allow for $solnit = new Wordmass
 
 
-echo($editor->munch($symboledWord));
+echo($editor->munch($SYMBOLED_WORD));
 
+echo '::::::Sahure sorted:::::::';
+print_r($editor->shrinkList($PHAROAH_ARRAY));
 // extract words to array, trim, standardize case, find redundants, sort, histogram
 // EditorTools
 //  to array
