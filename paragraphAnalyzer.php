@@ -13,15 +13,20 @@ interface EditorTools {
     public function parToGoodWords(string $paragraph) : array;
 }
 
+interface HistogramTools {
+    public function shrinkList(array $longMessy) : array;
+    // Next: make an associative array , make a counter, ...visualize not in this interface
+}
 
-
-class StringUtility implements EditorTools {
-        
+class StringUtility implements EditorTools, HistogramTools {
+    
+    // deprecated exploder
     public function oldbreakingfunction(string $wordString) : array {
         // todo        resplit on slash, underscore
         return explode(' ', $wordString);
     }
-
+    
+    // string to words, splits on spaces but also symbols inside
     public function worditize(string $wordString) : array {
         $words = [];
         $tok = strtok($wordString, " /\-@%");
@@ -32,18 +37,20 @@ class StringUtility implements EditorTools {
         return $words;
         // Idea: 1. sub dashes to spaces 2. explode
     }
-
-
-    // strip whites/non-alphas except internal ['-] 
+    
+    
+    // strip boundary whites/non-alphas except internal ['-] 
     public function munch(string $dirtyWord) : string {
         $trimmedWord = trim($dirtyWord, ' !@#$%^&*()\'"<>\.,');
         return $trimmedWord;
     }
     
+    // uppers to lower case
     public function standardize(string $chaosWord) : string {
         return strtolower($chaosWord);
     }
-
+    
+    // meta.    paragraph->nice wordlist
     public function parToGoodWords(string $paragraph) : array{
         $dirtyList = $this->worditize($paragraph);
         $cleanList = [];
@@ -54,8 +61,13 @@ class StringUtility implements EditorTools {
         }
         return $cleanList;
     }
-
-
+    
+    // longlist -> unredundant, ordered (hence shorter)
+    public function shrinkList(array $longMessy) : array {
+        
+        return ['thanks','for','the','gumball'];
+    }
+    
 }
 
 
